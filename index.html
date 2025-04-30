@@ -140,6 +140,24 @@
   window.onload = function () {
     document.getElementById('popupForm').style.display = 'flex';
   };
+  
+  // Show popup only on pages that are NOT thankyou.html
+  window.onload = function () {
+    if (!window.location.href.includes('thankyou.html')) {
+      const popup = document.getElementById('popupForm');
+      if (popup) {
+        popup.style.display = 'flex';
+      }
+    }
+  };
+
+  // Form submit redirect to thankyou page
+  function handleSubmit() {
+    setTimeout(function () {
+      window.location.href = "thankyou.html";
+    }, 1500);
+  }
 </script>
+
 </body>
 </html>
